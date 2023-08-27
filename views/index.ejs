@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Using a public API</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Hello api</h1>
-    
-</body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Get crypto price quote</h1>
+
+    <div class="container">
+      <form id="myForm" method="post">
+        <label for="userSymbol">Symbol:</label>
+        <input type="text" id="userSymbol" name="sybmol" />
+        <% if (locals.priceQuote){ %>
+        <p><%= priceQuote %></p>
+        <% } %>
+
+        <input
+          id="getPrice"
+          type="submit"
+          value="Get Price"
+          formaction="/get-price"
+        />
+      </form>
+    </div>
+  </body>
 </html>
